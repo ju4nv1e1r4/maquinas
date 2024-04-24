@@ -42,21 +42,21 @@ ORDER BY "media" DESC;
 SELECT quantidade, COUNT(*) AS moda
 FROM maquinas
 GROUP BY quantidade
-ORDER BY 2 ASC;
+ORDER BY 2 DESC;
 
 -- Calculando a amplitude
 
-SELECT quantidade,
+SELECT nome,
 	MAX(quantidade) AS maximo,
 	MIN(quantidade) AS minimo,
 	MAX(quantidade) - MIN(quantidade) AS amplitude
 	FROM maquinas
-	GROUP BY quantidade
+	GROUP BY nome
 	ORDER BY 1 DESC;
 	
 -- média, desvio padrão e variância
 
-SELECT quantidade,
+SELECT nome,
 	ROUND(AVG(quantidade),2) AS media,
 	MAX(quantidade) AS maximo,
 	MIN(quantidade) AS minimo,
@@ -64,7 +64,7 @@ SELECT quantidade,
 	ROUND(STDDEV_POP(quantidade),2) AS desvpad,
 	ROUND(VAR_POP(quantidade),2) AS variancia
 	FROM maquinas
-	GROUP BY quantidade
+	GROUP BY nome
 	ORDER BY 4 DESC;
 
 
