@@ -44,7 +44,7 @@ FROM maquinas
 GROUP BY quantidade
 ORDER BY 2 ASC;
 
--- Calculando a dispersão
+-- Calculando a amplitude
 
 SELECT quantidade,
 	MAX(quantidade) AS maximo,
