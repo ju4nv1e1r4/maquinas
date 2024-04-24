@@ -15,7 +15,7 @@ WHERE nome IN ('Maquina 01', 'Maquina 02', 'Maquina 03')
 GROUP BY nome
 
 -- Montante e média de cada maquina
-SELECT nome, SUM(quantidade) AS TOTAL, AVG(quantidade) AS media
+SELECT nome, SUM(quantidade) AS TOTAL, ROUND(AVG(quantidade),2) AS media
 FROM maquinas
 WHERE nome IN ('Maquina 01', 'Maquina 02', 'Maquina 03')
 GROUP BY nome
@@ -23,7 +23,7 @@ GROUP BY nome
 
 -- ordenado pela média ASCENDENTE
 
-SELECT nome, SUM(quantidade) AS TOTAL, AVG(quantidade) AS media
+SELECT nome, SUM(quantidade) AS TOTAL, ROUND(AVG(quantidade),2) AS media
 FROM maquinas
 WHERE nome IN ('Maquina 01', 'Maquina 02', 'Maquina 03')
 GROUP BY nome
@@ -31,7 +31,7 @@ ORDER BY "media" ASC;
 
 -- ordenado pela média DESCENDENTE
 
-SELECT nome, SUM(quantidade) AS TOTAL, AVG(quantidade) AS media
+SELECT nome, SUM(quantidade) AS TOTAL, ROUND(AVG(quantidade),2) AS media
 FROM maquinas
 WHERE nome IN ('Maquina 01', 'Maquina 02', 'Maquina 03')
 GROUP BY nome
